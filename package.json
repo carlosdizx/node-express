@@ -1,0 +1,19 @@
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosdizx/node-express.git"
+  },
+  "author": "Carlos Díaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosdizx/node-express/issues"
+  },
+  "homepage": "https://github.com/carlosdizx/node-express#readme"
+}
