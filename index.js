@@ -2,8 +2,8 @@ const express = require("express");
 const http = require("http");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const { request, response } = require("express");
 
+const dishRouter = require("./routes/dishRouter");
 const hostname = "localhost";
 const port = 3000;
 
@@ -12,6 +12,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
+app.use("/dishes", dishRouter);
 
 app.all("/dishes", (request, response, next) => {
   response.statusCode = 200;
@@ -20,8 +21,6 @@ app.all("/dishes", (request, response, next) => {
 });
 
 /**
- * Operaciones CRUD sobre un solo dish
- */
 
 app.get("/dishes/:dishId", (request, response, next) => {
   response.end(
@@ -50,6 +49,7 @@ app.delete("/dishes/:dishId", (request, response, next) => {
   response.end("Deleting dish:" + request.params.dishId);
 });
 
+*/
 //------------------------------- Respondiendo al servidor --------------------------
 
 app.use((req, res, next) => {
