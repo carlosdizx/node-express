@@ -2,10 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const promotionRouter = express.Router();
-const promotionRouterId = express.Router();
 
 promotionRouter.use(bodyParser.json());
-promotionRouterId.use(bodyParser.json());
 
 promotionRouter
   .route("/")
@@ -32,7 +30,7 @@ promotionRouter
     response.end("Deleting all the promotions!");
   });
 
-promotionRouterId
+promotionRouter
   .route("/:promotionId")
   .get((request, response, next) => {
     response.end(
@@ -62,4 +60,3 @@ promotionRouterId
   });
 
 module.exports = promotionRouter;
-module.exports = promotionRouterId;
