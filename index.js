@@ -63,7 +63,7 @@ app.post("/dishes/:dishId", (request, response, next) => {
 });
 
 app.put("/dishes/:dishId", (request, response, next) => {
-  response.write("Updating the dish: " + request.params.dishId + "/n");
+  response.write("Updating the dish: " + request.params.dishId+"\n");
   response.end(
     "Will update the dish: " +
       request.body.name +
@@ -73,7 +73,7 @@ app.put("/dishes/:dishId", (request, response, next) => {
 });
 
 app.delete("/dishes/:dishId", (request, response, next) => {
-  response.end("Deleting dish:"+request.params.dishId);
+  response.end("Deleting dish:" + request.params.dishId);
 });
 
 //------------------------------- Respondiendo al servidor --------------------------
