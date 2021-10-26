@@ -62,3 +62,4 @@ dishRouterId
   });
 
 module.exports = dishRouter;
+module.exports = dishRouterId;
