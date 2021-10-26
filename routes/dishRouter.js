@@ -5,7 +5,6 @@ const dishRouter = express.Router();
 const dishRouterId = express.Router();
 
 dishRouter.use(bodyParser.json());
-dishRouterId.use(bodyParser.json());
 
 dishRouter
   .route("/")
@@ -32,9 +31,8 @@ dishRouter
     response.end("Deleting all the dishes!");
   });
 
-module.exports = dishRouter;
 
-dishRouterId
+dishRouter
   .route("/:dishId")
   .get((request, response, next) => {
     response.end(
@@ -63,4 +61,4 @@ dishRouterId
     response.end("Deleting dish:" + request.params.dishId);
   });
 
-module.exports = dishRouterId;
+module.exports = dishRouter;
