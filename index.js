@@ -42,27 +42,27 @@ app.put("/dishes", (request, response, next) => {
 });
 
 app.delete("/dishes", (request, response, next) => {
-  response.end("Deleting all the dishes");
+  response.end("Deleting all the dishes!");
 });
 
 /**
  * Operaciones CRUD sobre un solo dish
  */
 
-app.get("/dishes:dishId", (request, response, next) => {
+app.get("/dishes/:dishId", (request, response, next) => {
   response.end(
     "Will send details of the dish: " + request.params.dishId + " to you!"
   );
 });
 
-app.post("/dishes:dishId", (request, response, next) => {
+app.post("/dishes/:dishId", (request, response, next) => {
   response.statusCode = 403;
   response.end(
     "POST operation not supported on /dishes/" + request.params.dishId
   );
 });
 
-app.put("/dishes:dishId", (request, response, next) => {
+app.put("/dishes/:dishId", (request, response, next) => {
   response.write("Updating the dish: " + request.params.dishId + "/n");
   response.end(
     "Will update the dish: " +
@@ -72,7 +72,7 @@ app.put("/dishes:dishId", (request, response, next) => {
   );
 });
 
-app.delete("/dishes:dishId", (request, response, next) => {
+app.delete("/dishes/:dishId", (request, response, next) => {
   response.end("Deleting dish:"+request.params.dishId);
 });
 
