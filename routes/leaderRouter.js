@@ -14,7 +14,7 @@ leaderRouter
 
   .post((request, response, next) => {
     response.end(
-      "Will add the leaders: " +
+      "Will add the leader: " +
         request.body.name +
         " with details: " +
         request.body.description

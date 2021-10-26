@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 
 const dishRouter = require("./routes/dishRouter");
 const promotionRouter = require("./routes/promotionRouter");
+const leaderRouter = require("./routes/leaderRouter");
 
 
 const hostname = "localhost";
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 
 app.use("/dishes", dishRouter);
 app.use("/promotions", promotionRouter);
+app.use("/leaders", leaderRouter);
 
 app.all("/dishes", (request, response, next) => {
   response.statusCode = 200;
