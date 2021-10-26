@@ -20,32 +20,6 @@ app.all("/dishes", (request, response, next) => {
 });
 
 /**
- * Operaciones CRUD sobre todo el conjunto de datos
- */
-
-app.get("/dishes", (request, response, next) => {
-  response.end("Will send all the dishes to you!");
-});
-
-app.post("/dishes", (request, response, next) => {
-  response.end(
-    "Will add the dish: " +
-      request.body.name +
-      " with details: " +
-      request.body.description
-  );
-});
-
-app.put("/dishes", (request, response, next) => {
-  response.statusCode = 403;
-  response.end("PUT operation not supported on /dishes");
-});
-
-app.delete("/dishes", (request, response, next) => {
-  response.end("Deleting all the dishes!");
-});
-
-/**
  * Operaciones CRUD sobre un solo dish
  */
 
