@@ -19,6 +19,10 @@ app.all("/dishes", (request, response, next) => {
   next();
 });
 
+/**
+ * Operaciones CRUD sobre todo el conjunto de datos
+ */
+
 app.get("/dishes", (request, response, next) => {
   response.end("Will send all the dishes to you!");
 });
@@ -34,12 +38,45 @@ app.post("/dishes", (request, response, next) => {
 
 app.put("/dishes", (request, response, next) => {
   response.statusCode = 403;
-  response.end("PUT operation not supported!");
+  response.end("PUT operation not supported on /dishes");
 });
 
 app.delete("/dishes", (request, response, next) => {
-  response.end("Delete all the dishes");
+  response.end("Deleting all the dishes");
 });
+
+/**
+ * Operaciones CRUD sobre un solo dish
+ */
+
+app.get("/dishes:dishId", (request, response, next) => {
+  response.end(
+    "Will send details of the dish: " + request.params.dishId + " to you!"
+  );
+});
+
+app.post("/dishes:dishId", (request, response, next) => {
+  response.statusCode = 403;
+  response.end(
+    "POST operation not supported on /dishes/" + request.params.dishId
+  );
+});
+
+app.put("/dishes:dishId", (request, response, next) => {
+  response.write("Updating the dish: " + request.params.dishId + "/n");
+  response.end(
+    "Will update the dish: " +
+      request.body.name +
+      " with details: " +
+      request.body.description
+  );
+});
+
+app.delete("/dishes:dishId", (request, response, next) => {
+  response.end("Deleting dish:"+request.params.dishId);
+});
+
+//------------------------------- Respondiendo al servidor --------------------------
 
 app.use((req, res, next) => {
   res.statusCode = 200;
