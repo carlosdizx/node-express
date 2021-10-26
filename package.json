@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/carlosdizx/node-express#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "4.16.3",
     "morgan": "^1.9.0",
     "prettier": "^2.4.1"
