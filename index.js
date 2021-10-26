@@ -20,37 +20,6 @@ app.all("/dishes", (request, response, next) => {
   next();
 });
 
-/**
-
-app.get("/dishes/:dishId", (request, response, next) => {
-  response.end(
-    "Will send details of the dish: " + request.params.dishId + " to you!"
-  );
-});
-
-app.post("/dishes/:dishId", (request, response, next) => {
-  response.statusCode = 403;
-  response.end(
-    "POST operation not supported on /dishes/" + request.params.dishId
-  );
-});
-
-app.put("/dishes/:dishId", (request, response, next) => {
-  response.write("Updating the dish: " + request.params.dishId+"\n");
-  response.end(
-    "Will update the dish: " +
-      request.body.name +
-      " with details: " +
-      request.body.description
-  );
-});
-
-app.delete("/dishes/:dishId", (request, response, next) => {
-  response.end("Deleting dish:" + request.params.dishId);
-});
-
-*/
-//------------------------------- Respondiendo al servidor --------------------------
 
 app.use((req, res, next) => {
   res.statusCode = 200;
